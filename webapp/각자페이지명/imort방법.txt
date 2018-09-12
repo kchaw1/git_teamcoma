@@ -1,0 +1,6 @@
+헤드 태그 안에
+<c:import url="/jsp/common/leftMenuIncludeCss.jsp" />
+<c:import url="/jsp/common/leftMenuIncludeScript.jsp" />
+
+바디 태그 안에
+<c:import url="/jsp/common/menu.jsp" />
