@@ -1,0 +1,66 @@
+!!!! letMenu.css 및 menu.jsp 깃에 새로 올렸으니 기존 파일에 덮어씌워주세요.
+
+
+메뉴 적용하는 방법
+
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 행으로 쪼갠다. 맨위와 맨 아래 90px의 트랙을 준다 */
+  grid-template-columns: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 열로 쪼갠다. 양옆에 90px의 트랙을 준다 */
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/R3LcfTvcGWY/1600x800); /* 배경은 원하는 이미지 주소 */
+}
+
+적용시킬 페이지 css 맨위에 위 css를 추가합니다.
+(배경이미지는 마음대로)
+
+적용시킬 페이지 html 전체를 <div class="grid-wrap"> <c:import url="/jsp/common/menu.jsp" /> 적용시킬 html </div> 로 감쌉니다.
+
+
+
+
+원하는 영역을 잡는 방법
+<div class="클래스 이름">
+ 	영역에 들어갈 내용
+</div>
+
+해당 페이지 css 파일 가서
+
+.클래스 이름 {
+grid-area: 시작"행"위치 / 시작"열"위치 / 마지막"행"위치 / 시작"열"위치
+  display: flex;
+}
+
+을 주게 되면 원하는 영역이 잡히게 됩니다.
+
+예를 들어 우리 프로젝트에서
+
+.menu {
+  position: relative;
+  z-index: 2;
+  grid-area: 1 / 1 / 21 / 5;
+  display: flex;
+  align-items: center;
+  background: #414155;
+}
+
+코드를 보면
+grid-area: 1 / 1 / 21 / 5; --> 가 메뉴의 영역을 잡는 부분
+
+시작행과 열은 1이고,
+행은 위아래로 총 21칸을 차지, 열은 좌우로 5칸을 차지한다는 의미!
+
+
+두줄요약으로 원리 설명하면
+1. grid-wrap으로 영역을 쪼갠뒤
+2. grid-wrap영역 안에 있는 css들에서 grid-area를 통해 원하는 영역을 잡을수 있는 원리입니다.
+
+
+우리프로젝트의 좌측메뉴적용 및 원하는 영역잡고 원하는 내용 넣기 위해 반드시 이해가 필요한 부분이니
+
+설명이 많이 부족하지만, 꼭 이해해주셨으면 합니다~
+
+p.s 앞으로 깃에 올릴때는 자기이름을 폴더로 생성해서 올려주시면 됩니다~ 
+
+참고사이트 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Grid_Layout/
