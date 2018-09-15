@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Ubuntu', arial, sans-serif;
+}
+
+.logo {
+  position: relative;
+  z-index: 3;
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9de73;
+}
+.logo p {
+  margin: 0;
+}
+
+
+
+
+.menu {
+  position: relative;
+  z-index: 2;
+  grid-area: 1 / 1 / 21 / 5;
+  display: flex;
+  align-items: center;
+  background: #414155;
+}
+.menu nav {
+  margin-left: 30px;
+  color: #d3d3d3;
+}
+.menu nav ul {
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.menu nav ul li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 30px 15px;
+  transition: color 0.3s;
+}
+.menu nav ul li:before {
+  content: "";
+  background: #f9de73;
+  height: 2px;
+  width: 20px;
+  margin-right: 40px;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.menu nav ul li.active, .menu nav ul li:hover {
+  color: white;
+}
+.menu nav ul li.active:before, .menu nav ul li:hover:before {
+  opacity: 1;
+}
+<style type"text/css">
+a:link {text-decoration:none; color:white;}
+a:visited {text-decoration:none; color:white;}
+a:active {text-decoration:none; color:white;}
+a:hover {text-decoration:none; color:white;}
+</style>
+
+
