@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px;
+  grid-template-columns: 90px repeat(18, 1fr) 90px;
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/R3LcfTvcGWY/1600x800);
+}
+
+
+
+#classLocation {
+
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 3/ 14 / 10 / 19;
+	display: flex;
+}
+
+#classLocationModify {
+	
+	grid-area: 11/ 18 / 11 / 19;
+	display: flex;
+}
+
+
+#chefOpenClass {
+	grid-area: 3 / 6 / 19 / 12;
+	background-color: #ffffff52;
+}
+
+/* grid*/
+* {
+    box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: .938em;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* form */
+form {
+  margin: 7% auto;
+  font-family: sans-serif;
+}
+
+
+button {
+  float: right;
+}
+
+button {
+  display: inline-block;
+  width: 10em;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.2em;
+  border: none;
+  height: 3em;
+  font-size: 0.9em;
+  background-color: #F44242;
+  line-height: 3em;
+}
+
+button:hover {
+    background-color: #F55A5A;
+    box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24), 0 1.063em 3.125em 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+  background-color: #D63A3A;
+}
+
+textarea {
+  width: 100%;
+  height: 10em;
+  border-radius: 3px;
+  resize: none;
+  border-color: #D6D2D2;
+}
