@@ -99,7 +99,7 @@
             <tr>
         <td>2</td>
         <td>제빵왕킴탁구</td>
-        <td>여자친구가 진짜 좋아해요(마카롱 원데이클래스 후기)</td>
+        <td><a href="<c:url value='/jsp/board/detailBoard.jsp'/>">여자친구가 진짜 좋아해요(마카롱 원데이클래스 후기)</a></td>
         <td>후기</td>
         <td>2018-07-08</td>
       </tr>    
@@ -116,7 +116,7 @@
    
     </tbody>
   </table>
-  <a href="<c:url value='/jsp/board/boardList.jsp' />"><button>글쓰기</button></a>
+  <a href="<c:url value='/jsp/board/writingBoard.jsp' />"><button >글쓰기</button></a>
   <select class="comSB">
   	<option>목록선택</option>
   	<option>글제목</option>
@@ -222,7 +222,7 @@
    
     </tbody>
   </table>
-  <a href="<c:url value='/jsp/board/boardList.jsp' />"><button>글쓰기</button></a>
+  <a href="<c:url value='/jsp/board/writingBoard.jsp' />"><button >글쓰기</button></a>
   <select class="comSB">
   	<option>목록선택</option>
   	<option>글제목</option>
