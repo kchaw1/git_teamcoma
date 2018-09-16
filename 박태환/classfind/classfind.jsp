@@ -97,6 +97,7 @@ body {
 }
 .post-module .post-content {
   position: absolute;
+  top: 50%; 
   bottom: 0;
   background: #FFFFFF;
   width: 100%;
@@ -220,49 +221,47 @@ grid-area: 1 / 1 / 15/ 21;
   </div>
   <!-- Normal -->
   <div class="column">
-    <div class="demo-title">동남아FOOD</div>
+    <div class="demo-title">GLOBAL FOOD</div>
     <!-- Post-->
     <div class="post-module">
       <!-- Thumbnail-->
       <div class="thumbnail">
         <div class="date">
           <div class="day">3회차</div>
-        </div><img src="https://s-i.huffpost.com/gen/1812779/original.jpg"/>
+        </div><img src="https://i.pinimg.com/originals/d4/a9/dc/d4a9dc54db11065071398dcaa74e40a8.jpg"/>
       </div>
       <!-- Post Content-->
       <div class="post-content">
         <div class="category">Photos</div>
-        <h1 class="title">피똥전문가<br>홍석천</h1>
+        <h1 class="title">허세 요리사<br>최현석</h1>
         <h2 class="sub_title">노페인, 노게인</h2>
-        <p class="description">동남아 음식의 최강자! <br>남자는 무조건 공짜!!</p>
-        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+        <p class="description">허세요리의 모든것!<br>여성은 무조건 공짜!!</p>
       </div>
     </div>
   </div>
   <!-- Normal -->
   <div class="column">
-    <div class="demo-title">한국FOOD</div>
+    <div class="demo-title">GLOBAL FOOD</div>
     <!-- Post-->
     <div class="post-module">
       <!-- Thumbnail-->
       <div class="thumbnail">
         <div class="date">
           <div class="day">1회차</div>
-        </div><img src="http://img.asiatoday.co.kr/file/2016y/08m/19d/2016081901001883200104656.jpg"/>
+        </div><img src="http://topclass.chosun.com/news_img/1508/1508_008.jpg"/>
       </div>
       <!-- Post Content-->
       <div class="post-content">
         <div class="category">Photos</div>
-        <h1 class="title">챔기름 달인<br>이정섭</h1>
-        <h2 class="sub_title">췜기룸의 고소한 향기~</h2>
-        <p class="description">참기름 무시하니~~? <br>참기름 하나만 잘 다뤄도 요리 끝!!!!</p>
-        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+        <h1 class="title">요식업 달인<br>백종원</h1>
+        <h2 class="sub_title">맛있겠쥬??</h2>
+        <p class="description">요식업은<br>저 하나면 끝이쥬~!</p>
       </div>
     </div>
   </div>
   <!-- Normal -->
   <div class="column">
-    <div class="demo-title">할랄FOOD</div>
+    <div class="demo-title">KOREA FOOD</div>
     <!-- Post-->
     <div class="post-module">
       <!-- Thumbnail-->
@@ -275,30 +274,28 @@ grid-area: 1 / 1 / 15/ 21;
       <div class="post-content">
         <div class="category">Photos</div>
         <h1 class="title">요리연구가<br>이혜정</h1>
-        <h2 class="sub_title">얼메나 맛있게요~?</h2>
+        <h2 class="sub_title">얼메나 맛있게요?</h2>
         <p class="description">그 옛날 어머니가 해주셨던 맛. <br>맛의 고향은 모두 똑같습니다.</p>
-        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
       </div>
     </div>
   </div>
    <!-- Normal -->
   <div class="column">
-    <div class="demo-title">남자FOOD</div>
+    <div class="demo-title">CHINA FOOD</div>
     <!-- Post-->
     <div class="post-module">
       <!-- Thumbnail-->
       <div class="thumbnail">
         <div class="date">
           <div class="day">215회차</div>
-        </div><img src="http://goos.wiki/images/e/e0/%EB%B9%8C%EB%A6%AC_%ED%97%A4%EB%A7%81%ED%84%B4.png"/>
+        </div><img src="http://cdn.pressian.com/data/photos/cdn/20171041/art_1507595052.jpg"/>
       </div>
       <!-- Post Content-->
       <div class="post-content">
         <div class="category">Photos</div>
-        <h1 class="title">탑게이<br> 빌리헤링턴</h1>
-        <h2 class="sub_title">Ang~?</h2>
-        <p class="description">Go to Hell!!!</p>
-        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+        <h1 class="title">중식요리의<br>대가<br>이연복</h1>
+        <h2 class="sub_title">동파육에<br>고량주 한잔?</h2>
+        <p class="description">대륙은 넓다</p>
       </div>
     </div>
   </div> 
