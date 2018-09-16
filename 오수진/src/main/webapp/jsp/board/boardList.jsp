@@ -116,7 +116,7 @@
    
     </tbody>
   </table>
-  <a href="<c:url value='/jsp/board/boardList.jsp' />"><button>글쓰기</button></a>
+  <a href="<c:url value='/jsp/board/writingBoard.jsp' />"><button >글쓰기</button></a>
   <select class="comSB">
   	<option>목록선택</option>
   	<option>글제목</option>
@@ -222,7 +222,7 @@
    
     </tbody>
   </table>
-  <a href="<c:url value='/jsp/board/boardList.jsp' />"><button>글쓰기</button></a>
+  <a href="<c:url value='/jsp/board/writingBoard.jsp' />"><button >글쓰기</button></a>
   <select class="comSB">
   	<option>목록선택</option>
   	<option>글제목</option>

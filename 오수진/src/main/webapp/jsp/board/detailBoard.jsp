@@ -20,9 +20,14 @@
   background-image:url(https://source.unsplash.com/1Rm9GLHV0UA/1600x800); /* 배경은 원하는 이미지 주소 */
 }
 .detailBoardByNo{
-grid-area:14 /60/ 30 / 5;
+grid-area: 2 /	6/ 20 / 10;
 }
-
+.post{
+	width: 900px;
+	height:600;
+	background: red;
+	overflow: scroll;
+}
 form {
  position: relative;
  top: 40px;
