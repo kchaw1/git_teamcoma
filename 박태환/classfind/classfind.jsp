@@ -255,7 +255,7 @@ grid-area: 1 / 1 / 15/ 21;
         <div class="category">Photos</div>
         <h1 class="title">챔기름 달인<br>이정섭</h1>
         <h2 class="sub_title">췜기룸의 고소한 향기~</h2>
-        <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+        <p class="description">참기름 무시하니~~? <br>참기름 하나만 잘 다뤄도 요리 끝!!!!</p>
         <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
       </div>
     </div>
@@ -276,7 +276,7 @@ grid-area: 1 / 1 / 15/ 21;
         <div class="category">Photos</div>
         <h1 class="title">요리연구가<br>이혜정</h1>
         <h2 class="sub_title">얼메나 맛있게요~?</h2>
-        <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+        <p class="description">그 옛날 어머니가 해주셨던 맛. <br>맛의 고향은 모두 똑같습니다.</p>
         <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
       </div>
     </div>
@@ -297,7 +297,7 @@ grid-area: 1 / 1 / 15/ 21;
         <div class="category">Photos</div>
         <h1 class="title">탑게이<br> 빌리헤링턴</h1>
         <h2 class="sub_title">Ang~?</h2>
-        <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+        <p class="description">Go to Hell!!!</p>
         <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
       </div>
     </div>
@@ -305,8 +305,7 @@ grid-area: 1 / 1 / 15/ 21;
 
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="http://codepen.io/andytran/pen/vLmRVp.js"></script>
+
 <script>
 $(window).load(function() {
 	  $('.post-module').hover(function() {
@@ -317,6 +316,5 @@ $(window).load(function() {
 	  });
 	});
 </script>
-
 </body>
 </html>
