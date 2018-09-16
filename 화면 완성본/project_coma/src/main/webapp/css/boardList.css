@@ -1,0 +1,195 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3{
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.tabs{
+	
+    width: 900px;
+    display: block;
+    margin: 40px auto;
+    position: relative;
+}
+
+.tabs .tab{
+    float: left;
+    display: block;
+}
+
+.tabs .tab>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.tabs .tab>label {
+    display: block;
+    padding: 6px 21px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: #FFF;
+    background: #4a83fdcc;
+}
+
+.tabs .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;
+    width: 900px;
+    height: 562px;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    background: #232330ab;
+    color: #DFDFDF;
+    
+    opacity:0;
+    transition: opacity 400ms ease-out;
+}
+
+.tabs>.tab>[id^="tab"]:checked + label {
+    top: 0;
+    background: #232330ab;
+    color: #F5F5F5;
+}
+
+.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */
+   
+    opacity: 1;
+    transition: opacity 400ms ease-out;
+}
+
+main {
+ 
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  align-items: center;
+}
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 행으로 쪼갠다. 맨위와 맨 아래 90px의 트랙을 준다 */
+  grid-template-columns: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 열로 쪼갠다. 양옆에 90px의 트랙을 준다 */
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/1Rm9GLHV0UA/1600x800); /* 배경은 원하는 이미지 주소 */
+}
+.boardList{
+	grid-area: 1 / 7 / 20 / 20;
+  display: flex;
+}
+
+.table-wrapper {
+  overflow: auto;
+	max-width: 100%;
+	background:
+		linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+		linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
+		radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-position: 0 0, 100%, 0 0, 100%;
+	background-attachment: local, local, scroll, scroll;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+}
+td{
+	color:#555555eb;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  font-size: inherit;
+  margin: 7px 0.25em;
+  padding: 0.25em 0.5em;
+  background-color: #555;
+  color: #fff;
+  border: 0;
+  transition: background-color 0.4s, color 0.4s;
+  
+  &:hover {
+    background-color: #bbb;
+    color: #000;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+}
+
+.page-numbers {
+  margin: 1em 1em 0;
+}
+
+.page-number {
+  padding: 0.5em;
+  opacity: 0.5;
+}
+
+.active {
+  opacity: 1;
+}
+.comSB{
+	margin-left: 25px;
+	border-radius: 0px;
+    border-color: rgb(169, 169, 169)
+}
+.searchBoard{
+	margin-left: 15px;
+    width: 335px;
+}
+@media screen and (min-width: 540px) {
+  .backward {
+    order: 1;
+  }
+
+  .page-numbers {
+    order: 2;
+    margin-top: 0;
+  }
+  
+  .forward {
+    order: 3;
+  }
+}
+<style type"text/css">
+A:link {text-decoration:none; color:white;}
+A:visited {text-decoration:none; color:white;}
+A:hover {text-decoration:none; color:white;}
+
+   
+   
+}
+</style>
