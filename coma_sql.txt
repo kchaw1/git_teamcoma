@@ -1,0 +1,78 @@
+-- 학생 테이블
+create table tb_s_signup(
+s_no number primary key ,
+s_id varchar2(15) unique not null,
+s_name varchar2(15) not null,
+s_addr varchar2(50) not null,
+s_email varchar2(30) unique not null,
+s_phonenumber char(11) not null,
+signup_classify char(1) ,
+s_birth char(8) not null,
+s_signup_date date default sysdate
+)
+-- 쉐프 테이블
+create table tb_c_signup(
+c_no number primary key,
+c_id varchar2(15) unique not null,
+c_name varchar2(15) not null,
+c_addr varchar2(50) not null,
+c_email varchar2(30) unique not null,
+c_phonenumber char(11) not null,
+signup_classify char(1) ,
+c_birth char(8) not null
+)
+
+--게시판
+create table tb_coma_board (
+b_no number primary key,
+b_title varchar2(50) not null,
+b_content varchar2(4000) not null,
+b_writer varchar2(15) references tb_s_signup(s_id), --?
+b_reg_date date default sysdate ,
+b_category varchar2(10)
+)
+
+--댓글
+create table tb_coma_comment (
+c_no number references tb_coma_board(b_no),
+c_writer varchar2(15) not null,
+c_content varchar2(140) not null,
+c_reg_date date default sysdate
+)
+
+-- 클래스 정보
+create table tb_class_info (
+class_no number primary key,
+class_name varchar(30) not null,
+class_classify varchar(10) not null,
+class_teacher varchar(15) not null,
+class_start_day varchar2(8) not null,
+class_end_day varchar2(8) not null ,
+class_start_time varchar2(4) not null,
+class_end_time varchar2(4) not null,
+class_location varchar2(50) not null,
+class_introduce varchar2(4000)
+)
+
+-- 학생 관리
+create table tb_student_management(
+m_stuno number primary key,
+m_stuname varchar2(15) references tb_s_signup(s_name) not null,
+m_stubirth char(8) references tb_s_signup(s_birth) not null,
+m_stuemail varchar2(30) references tb_s_signup(s_stuemail) not null,
+m_stuaddr varchar2(50) tb_s_signup(s_addr) not null,
+m_stuphonenumber char(11) tb_s_signup(s_phonenumber) not null,
+m_assesment char(4000)
+출석 ??
+)
+
+--첨부파일 테이블
+s_no number primary key ,
+s_id varchar2(15) unique not null,
+s_name varchar2(15) not null,
+s_addr varchar2(50) not null,
+s_email varchar2(30) unique not null,
+s_phonenumber char(11) not null,
+signup_classify char(1) ,
+s_birth char(8) not null,
+s_signup_date date default sysdate
