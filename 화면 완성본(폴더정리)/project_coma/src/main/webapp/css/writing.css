@@ -1,0 +1,38 @@
+<style >
+@charset "UTF-8";
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 행으로 쪼갠다. 맨위와 맨 아래 90px의 트랙을 준다 */
+  grid-template-columns: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 열로 쪼갠다. 양옆에 90px의 트랙을 준다 */
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/1Rm9GLHV0UA/1600x800); /* 배경은 원하는 이미지 주소 */
+}
+
+.writeBoard{
+	grid-area: 2 / 6/ 30 / 10;
+	padding:25px;
+
+	width:900px;
+	max-height:inherit;
+	background: #232330ab;
+}
+.writingHeading{
+	color:silver;
+	font-size: 24px;
+}
+.selectcates{
+	size: 20px;
+	font-size: 24px;
+}
+button {
+  font-size: inherit;
+  margin: 7px 0.25em;
+  padding: 0.25em 0.5em;
+  background-color: #555;
+  color: #fff;
+  border: 0;
+  transition: background-color 0.4s, color 0.4s;
+  }
+#upload{display:none;}
+</style>

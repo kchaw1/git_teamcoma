@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+
+
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 행으로 쪼갠다. 맨위와 맨 아래 90px의 트랙을 준다 */
+  grid-template-columns: 90px repeat(18, 1fr) 90px; /* 화면을 18칸의 열로 쪼갠다. 양옆에 90px의 트랙을 준다 */
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/R3LcfTvcGWY/1600x800); /* 배경은 원하는 이미지 주소 */
+}
+
+.chefIntroduceTitle {
+	grid-area: 1 / 6 / 2 / 10;
+	
+}
+
+.chefIntroduceTitle h1 {
+	color: white;
+}
+
+.profilePicture {
+	
+	
+	background-size: 325px 339px;
+	grid-area: 2 / 6 / 10 / 10;
+	display: flex;
+}
+
+.classIntroduce {
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 2 / 11 / 10 / 15;
+	display: flex;
+}
+
+.classInfo {
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 2 / 16 / 10 / 20;
+	display: flex;
+	
+}
+
+
+.personalHistory {
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 11 / 6 / 20 / 10;
+	display: flex;
+	padding-top: 10px;
+}
+
+.youtubeLink {
+	overflow:hidden;
+	padding-top: 30px;
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 11 / 11 / 20 / 15;
+	display: flex;
+}
+
+#classLocation {
+
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 11 / 16 / 20 / 20;
+	display: flex;
+}
