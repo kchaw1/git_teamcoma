@@ -1,0 +1,76 @@
+
+
+teamcoma.repository
+	-domain
+		- member
+		- board
+		- comment
+		- chefFile
+		- boardFile
+		- classInfo
+		- studentManagement
+		- chefInfo
+		
+		
+	-mapper
+		boardMapper
+		loginMapper
+		memberMapper
+		classMapper
+		
+
+
+teamcoma.board.controller
+teamcoma.login.controller
+teamcoma.signup.controller	
+teamcoma.clsassfind.controller
+teamcoma.chef.controller
+teamcoma.student.controller
+
+
+
+
+
+teamcoma.common
+		-file
+		-db
+teamcoma.filter
+	- authfilter
+	- ecodingfilter
+
+teamcoma.login
+
+teamcoma.main
+
+teamcoma.signup
+
+teamcoma.classfind
+
+teamcoma.board
+
+teamcoma.chef
+	-chefmain
+	-chefinfo
+	-chefdetailstudent
+	-chefclassopen
+	-chefclassmodify
+
+
+teamcoma.student
+	-studentmain
+	-studentprofile
+	-studentrecord
+	-studentcomment
+
+
+
+---------------------------------------
+
+board.xml
+login.xml
+member.xml
+class.xml
+
+--------------------------------------
+
+session??
