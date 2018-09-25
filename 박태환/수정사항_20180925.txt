@@ -1,0 +1,30 @@
+최종수정일 : 2018/09/25 
+
+<java 관련 추가>
+
+\teamcoma\controller\classfind\ClassFind.java
+
+\teamcoma\repository\domain\ClassInfo.java
+
+\teamcoma\repository\mapper\ClassInfoMapper.java
+
+
+
+
+<resources 관련 추가>
+
+\resources\config\mybatis\sqlMapConfig.xml => classFInd 관련 추가
+-1. <typeAlias type="teamcoma.repository.domain.ClassInfo" alias="ClassInfo"/>
+-2. <mapper resource="config/sqlmap/classfind.xml"/>
+
+\resources\config\sqlmap\classfind.xml
+
+
+
+
+<webapp 관련 추가>
+
+\webapp\jsp\classfind\classfind.jsp
+
+
+

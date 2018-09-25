@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="teamcoma.repository.mapper.ClassInfoMapper">
+<resultMap id="classInfoMap" type="ClassInfo">
+	<result column = "class_no" property="classNo"/>
+	<result column = "class_name" property="className"/>
+	<result column = "class_classify" property="classClassify"/>
+	<result column = "class_teacher" property="classTeacher"/>
+	<result column = "class_start_day" property="classStartDay"/>
+	<result column = "class_end_day" property="classEndDay"/>
+	<result column = "class_start_time" property="classStartTime"/>
+	<result column = "class_end_time" property="classEndTime"/>
+	<result column = "class_cost" property="classCost"/>
+	<result column = "class_video" property="classVideo"/>
+	<result column = "class_location" property="classLocation"/>
+	<result column = "class_introduce" property="classIntroduce"/>
+    <result column = "class_latitude" property="classLatitude"/>
+	<result column = "class_longtitude" property="classLongtitude"/>
+</resultMap>
+	<select id="selectName" resultMap="classInfoMap">
+		select class_introduce, class_teacher
+		  from tb_class_info
+	</select>
+</mapper>
