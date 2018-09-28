@@ -1,0 +1,30 @@
+최종수정일 : 2018/09/25 
+
+<java 관련 추가>
+
+\teamcoma\controller\login\PassFind.java
+
+
+
+
+<매퍼 파일 관련 수정>
+LoginMapper.java 에
+String selectPassFind(Member member); 추가
+
+
+
+
+<resources 관련 수정>
+
+\resources\config\sqlmap\login.xml 수정
+
+
+
+
+<webapp 관련 추가>
+
+\webapp\jsp\login\loginForm.jsp
+\webapp\jsp\login\passfind.jsp
+
+
+
