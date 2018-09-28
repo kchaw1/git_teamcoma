@@ -26,4 +26,8 @@ mapper안에
 signup폴더안에
  - signup.jsp 
 
+
+teamcoma.common.file안에
+ - MlecFileRenamePolicy 
+
 각각 붙여넣어 주시면 됩니다.! 

@@ -17,10 +17,10 @@ A:hover {text-decoration:none; color:white;}
       <ul>
        <c:choose>
        		<c:when test="${empty user}">
-        <li><a href="<c:url value="/jsp/login/loginForm.jsp" />">로그인</a></li>
+        <li><a href="<c:url value="/jsp/login/loginForm.jsp" />" >로그인</a></li>
         	</c:when>
         	<c:otherwise>
-        	<li><a href="<c:url value="/login/logout.do" />">로그아웃</a></li>
+        	<li><a href="<c:url value="/login/logout.do" />">${user.id}님   로그아웃</a></li>
         	</c:otherwise>
       	</c:choose>
         <li><a href="<c:url value="/signup/signup1.do" />">회원가입</a></li>

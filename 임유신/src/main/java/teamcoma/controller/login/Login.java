@@ -49,6 +49,8 @@ public class Login extends HttpServlet{
 			 //로그인 성공시 메인화면으로 이동
 			 response.sendRedirect(request.getContextPath() + "/jsp/main/main.jsp");
 			 
+			 
+			 
 		
 		 
 	}//service
