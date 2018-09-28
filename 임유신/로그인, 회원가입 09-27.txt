@@ -1,0 +1,33 @@
+-메일인증, 소셜로그인 빼고 완성본
+
+1. java파일(teamcoma.controller.login)
+ - Login.java
+ - LoginForm.java
+ - Logout.java
+
+  java파일(teamcoma.controller.signup)
+   - IdCheck.java
+   - SignUp.java
+붙여넣기 해주시면  됩니다.
+
+mapper안에
+ - LoginMapper.java  <- 이것도 붙여넣기 해주세여
+
+
+2. login.xml 파일도 붙여넣기 해주시면 됩니다.
+
+3. common 폴더안에 
+ - menu.jsp     <- 이것도 붙여넣기 해주세요~
+
+4. jsp 파일
+ login폴더안에
+  - loginForm.jsp
+
+signup폴더안에
+ - signup.jsp 
+
+
+teamcoma.common.file안에
+ - MlecFileRenamePolicy 
+
+각각 붙여넣어 주시면 됩니다.! 
