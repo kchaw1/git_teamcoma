@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.grid-wrap{
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px;
+  grid-template-columns: 90px repeat(18, 1fr) 90px;
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/R3LcfTvcGWY/1600x800);
+}
+
+table, th, td {
+	font-size:15px;
+}
+
+#studentProfileTitle {
+	grid-area: 1 / 6 / 2 / 10;
+	
+}
+
+#studentProfileTitle h1 {
+	color: white;
+}
+
+#profilePicture {
+	background-size: 325px 339px;
+	grid-area: 2 / 6 / 10 / 10;
+	display: flex;
+}
+
+#studentprofile {
+	background-color: #ffffff52;
+	color:black;
+	grid-area: 2 / 11 / 10 / 15;
+	display: flex;
+}
+
+ #atendance{
+	background-color: #ffffff52;
+	font-size:20px;
+	color:black;
+	grid-area: 2 / 16 / 10 / 20;
+	display: flex;
+	
+}
+
+
+#assessment {
+	background-color: #ffffff52;
+	color:black;
+	grid-area: 11 / 11 / 20 / 20;
+	display: flex;
+	padding-top: 10px;
+}
+
+#assessbtn {
+	grid-area: 19 / 18 / 19 / 20;
+	padding: 10px;
+	display: flex;
+}
+
+

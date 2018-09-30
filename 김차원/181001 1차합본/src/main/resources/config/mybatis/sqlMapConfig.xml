@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 루트태그 : 하나만 존재해야함 -->	
+<configuration>
+	<properties resource="config/mybatis/db.properties"/>
+	<typeAliases>
+		<typeAlias alias="Attach" type="teamcoma.repository.domain.Attach" />
+		<typeAlias alias="Board" type="teamcoma.repository.domain.Board" />
+		<typeAlias alias="ClassInfo" type="teamcoma.repository.domain.ClassInfo" />
+		<typeAlias alias="ChefFile" type="teamcoma.repository.domain.ChefFile" />
+		<typeAlias alias="Member" type="teamcoma.repository.domain.Member" />
+		<typeAlias alias="ClassStudent" type="teamcoma.repository.domain.ClassStudent" />
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>	
+
+	<mappers>
+		<mapper resource="config/sqlmap/board.xml" />
+		<mapper resource="config/sqlmap/class.xml" />
+		<mapper resource="config/sqlmap/classfind.xml" />
+		<mapper resource="config/sqlmap/login.xml" />
+		<mapper resource="config/sqlmap/student.xml" />
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+

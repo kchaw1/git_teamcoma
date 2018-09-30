@@ -1,0 +1,106 @@
+--멤버 테이블
+create table tb_coma_member(
+    no number primary key,
+    file_no number,
+    file_sysname varchar2(50),
+    file_syspath varchar2(100),
+    id varchar2(30) not null,
+    password varchar2(20) not null,
+    name varchar2(30) not null,
+    nick_name varchar2(30) unique,
+    main_addr varchar2(100) not null,
+    detail_addr varchar2(100) not null,
+    email varchar2(30) not null,
+    phone_number char(11) not null,
+    signup_classify char(1) not null,
+    year char(8) not null,
+    day char(8) not null,
+    month char(8) not null,
+    signup_date date default sysdate   
+);
+
+-- 클래스 정보
+create table tb_class_info(
+    class_no number primary key,
+    no references tb_coma_member(no) on delete cascade,
+    class_name varchar2(100) not null,
+    class_classify char(1) not null,
+    class_teacher varchar2(30) not null,
+    class_start_day varchar2(10) not null,
+    class_end_day varchar2(10) not null,
+    class_start_time varchar2(5) not null,
+    class_end_time varchar2(5) not null,
+    class_cost number not null,
+    class_video varchar2(100) not null,
+    class_location varchar2(50) not null,
+    class_introduce varchar2(4000) not null,
+    class_latitude varchar2(50) not null,
+    class_longtitude varchar2(50) not null,
+    class_career varchar2(4000) not null
+);
+
+
+--클래스 파일
+create table tb_chef_file(
+    chef_fileno number primary key,
+    class_no number references tb_class_info(class_no) on delete cascade,
+    no number references tb_coma_member(no),
+    chef_filename varchar2(100) not null,
+    chef_filepath varchar2(100) not null,
+    chef_fileclassify char(1)
+);
+
+-- 게시판
+create table tb_coma_board(
+    b_no number primary key,
+    b_writer varchar2(30) not null REFERENCES tb_coma_member(nick_name),
+    b_title varchar2(150) not null,
+    b_content varchar2(4000) not null,
+    b_reg_date date default sysdate,
+    b_category char(1)
+);
+
+-- 첨부파일
+create table tb_coma_attach(
+    b_fileno number primary key,
+    b_no number not null REFERENCES tb_coma_board(b_no),
+    b_filename varchar2(100),
+    b_filepath varchar2(100)
+);
+
+
+-- 댓글
+create table tb_coma_comment (
+    c_no number PRIMARY KEY,
+    b_no number not null REFERENCES tb_coma_board(b_no),
+    c_writer varchar2(30) not null REFERENCES tb_coma_member(nick_name),
+    c_content varchar2(140) not null,
+    c_reg_date date default sysdate
+);
+
+-- 클래스학생
+create table tb_class_student(
+    m_no number primary key,
+    class_no number references tb_class_info(class_no) on delete cascade,
+    no number references tb_coma_member(no) on delete cascade,
+    m_assesment varchar2(4000),
+    m_name varchar2(30) not null,
+    m_email varchar2(30) not null,
+    m_mainaddr varchar2(50) not null,
+    m_detailaddr varchar2(50) not null,
+    m_phonenumber char(11) not null,
+    m_year char(8) not null,
+    m_month char(8) not null,
+    m_day char(8) not null,
+    m_filename varchar2(50), 
+    m_filepath varchar2(100),
+    m_nickname varchar2(30)
+);
+
+-- 시퀀스
+create sequence s_classstu_no;
+create sequence s_cmember_no;
+create sequence s_file_no;
+create sequence s_cboard_no;
+create sequence s_class_no;
+create sequence s_chef_file_no;
