@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="teamcoma.repository.mapper.BoardMapper">
+<resultMap type="Board" id="boardMap">
+	<result column="b_no" property="bNo" />
+	<result column="b_title" property="bTitle" />
+	<result column="b_writer" property="bWriter" />
+	<result column="b_content" property="bContent" />
+	<result column="b_reg_date" property="bRegDate" />
+	<result column="b_category" property="bCategory" />
+</resultMap>
+
+	<!-- 리스트 -->
+	<select id = "selectBoard" parameterType="int" resultMap="boardMap">
+		select *
+		from tb_coma_board
+		where b_category = #{bCategory}
+		order by b_no desc
+	</select>
+	<!-- 글번호 검색 -->
+	 <select id = "selectBoardByNo" parameterType="int" resultMap="boardMap">
+	 	select *
+	 	from tb_coma_board
+	 	where b_no = #{bNo}
+	 </select>
+	 <!-- insert -->
+	 <insert id="insertBoard" parameterType="Board">
+	 <selectKey order="BEFORE" resultType="int" keyProperty="bNo">
+         select s_cboard_no.nextval from dual
+      </selectKey>
+		insert into tb_coma_board(
+			b_no, b_title, b_writer, b_content, b_category
+		) values (
+			#{bNo}, #{bTitle}, #{bWriter}, #{bContent}, #{bCategory}
+		)
+	</insert>
+	
+	<!-- 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		delete 
+    	  from tb_coma_board
+    	 where b_no = #{bNo}
+	</delete>
+	
+	<!-- 수정 -->
+	<update id="updateBoard" parameterType="Board">
+		update tb_coma_board
+    	   set b_title = #{bTitle},
+    	       b_content = #{bContent},
+    	       b_category = #{bCategory}
+    	 where b_no = #{bNo}
+	</update>
+
+	<!-- 첨부파일 -->
+	<resultMap type="Attach" id="attachMap">
+		<result column="b_fileno" property="bFileNO" />
+		<result column="no" property="no" />
+		<result column="b_filename" property="bFileName" />
+		<result column="b_filepath" property="bFilePath" />
+	</resultMap>
+	
+	<insert id="insertAttach" parameterType="Attach">
+		insert into tb_coma_attach(
+			b_fileno, no, b_filepath
+		)values(
+			s_attach_no.nextval, #{no}, #{bFilePath}
+		)
+	</insert>
+	
+	<!-- 댓글 부분 -->
+	<resultMap type="Comment" id="commentMap">
+		<result column="c_no" property="cNo" />
+		<result column="no" property="no" />
+		<result column="c_writer" property="cWriter" />
+		<result column="c_content" property="cContent" />
+		<result column="c_reg_date" property="cRegDate" />
+	</resultMap>
+	<!-- 댓글조회 -->
+	<select id="selectCommentByNo" parameterType="int" 
+	        resultMap="commentMap">
+	    select *
+	      from tb_coma_comment
+	     where no = #{no}  
+	     order by c_no    
+	</select>
+	<!-- 댓글 달기  -->
+	<insert id="insertComment" parameterType="Comment" >
+		insert into tb_coma_comment (
+			c_no, no, c_writer, c_content
+		) values (
+			s_comment_no.nextval, #{no}, #{cWriter}, #{cContent}
+		)
+	</insert>
+	<!--  댓글수정 -->
+	<update id="updateComment" parameterType="Comment" >
+		update tb_coma_comment
+		   set c_content = #{cContent}     
+    	 where c_no = #{cNo}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
