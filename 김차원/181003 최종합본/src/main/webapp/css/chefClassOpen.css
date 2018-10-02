@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+body {
+	margin:0px;
+}
+
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px;
+  grid-template-columns: 90px repeat(18, 1fr) 90px;
+  overflow: hidden;
+  background-image:url(https://source.unsplash.com/R3LcfTvcGWY/1600x800);
+}
+
+
+
+#classLocation {
+
+	background-color: #ffffff52;
+	color:white;
+	grid-area: 3/ 14 / 13 / 20;
+	display: flex;
+}
+
+
+
+
+#chefOpenClass {
+	padding: 10px;
+	grid-area: 2 / 6 / 20 / 20;
+	background-color: #ffffffb3;
+}
+
+#locationText {
+   margin-left: 750px;
+
+}
+
+#classintroduce {
+	margin-top: -15px;
+}
+
+
+button {
+  display: inline;
+  width: 10em;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.2em;
+  border: none;
+  height: 3em;
+  font-size: 0.9em;
+  background-color: #F44242;
+  line-height: 3em;
+}
+
+button:hover {
+    background-color: #F55A5A;
+    box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24), 0 1.063em 3.125em 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+  background-color: #D63A3A;
+}
+
+
+textarea {
+  width: 500px;
+  height: 80px;
+  border-radius: 3px;
+  resize: none;
+  border-color: #D6D2D2;
+}
