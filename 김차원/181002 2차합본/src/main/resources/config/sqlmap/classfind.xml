@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="teamcoma.repository.mapper.ClassInfoMapper">
+<resultMap id="classInfoMap" type="ClassInfo">
+	<result column = "class_no" property="classNo"/>
+	<result column = "class_name" property="className"/>
+	<result column = "class_classify" property="classClassify"/>
+	<result column = "class_teacher" property="classTeacher"/>
+	<result column = "class_start_day" property="classStartDay"/>
+	<result column = "class_end_day" property="classEndDay"/>
+	<result column = "class_start_time" property="classStartTime"/>
+	<result column = "class_end_time" property="classEndTime"/>
+	<result column = "class_cost" property="classCost"/>
+	<result column = "class_video" property="classVideo"/>
+	<result column = "class_location" property="classLocation"/>
+	<result column = "class_introduce" property="classIntroduce"/>
+    <result column = "class_latitude" property="classLatitude"/>
+	<result column = "class_longtitude" property="classLongtitude"/>
+</resultMap>
+
+<resultMap id="memberMap" type="Member">
+		<result column="no" property="no" />
+		<result column="file_no" property="fileNo" />
+		<result column="file_sysname" property="fileSysName" />
+		<result column="file_syspath" property="fileSysPath" />
+		<result column="id" property="id" />
+		<result column="password" property="password" />
+		<result column="name" property="name" />
+		<result column="nick_name" property="nickName" />
+		<result column="main_addr" property="mainAddr" />
+		<result column="detail_addr" property="detailAddr" />
+		<result column="email" property="email" />
+		<result column="phone_number" property="phoneNumber" />
+		<result column="signup_classify" property="signupClassify" />
+		<result column="year" property="year" />
+		<result column="day" property="day" />
+		<result column="month" property="month" />
+		<result column="signup_date" property="signupDate" />
+
+	</resultMap>
+
+	<select id="selectName" resultMap="classInfoMap">
+		select *
+		  from tb_class_info
+	</select>
+	
+	
+	<select id="selectMemberByNo" resultMap="memberMap" parameterType="int">
+		select *
+		  from tb_coma_member
+		 where no = #{no}  
+	</select>
+	
+	
+</mapper>

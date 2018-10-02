@@ -1,3 +1,11 @@
+-- ½ÃÄö½º
+create sequence s_classstu_no;
+create sequence s_cmember_no;
+create sequence s_attach_no;
+create sequence s_cboard_no;
+create sequence s_chef_file_no;
+create sequence s_class_no;
+
 --¸â¹ö Å×ÀÌºí
 create table tb_coma_member(
     no number primary key,
@@ -53,7 +61,7 @@ create table tb_chef_file(
 -- °Ô½ÃÆÇ
 create table tb_coma_board(
     b_no number primary key,
-    b_writer varchar2(30) not null REFERENCES tb_coma_member(nick_name),
+    b_writer varchar2(30) not null REFERENCES tb_coma_member(nick_name) on delete cascade,
     b_title varchar2(150) not null,
     b_content varchar2(4000) not null,
     b_reg_date date default sysdate,
@@ -63,7 +71,7 @@ create table tb_coma_board(
 -- Ã·ºÎÆÄÀÏ
 create table tb_coma_attach(
     b_fileno number primary key,
-    b_no number not null REFERENCES tb_coma_board(b_no),
+    no number not null REFERENCES tb_coma_board(b_no) on delete cascade,
     b_filename varchar2(100),
     b_filepath varchar2(100)
 );
@@ -72,13 +80,13 @@ create table tb_coma_attach(
 -- ´ñ±Û
 create table tb_coma_comment (
     c_no number PRIMARY KEY,
-    b_no number not null REFERENCES tb_coma_board(b_no),
-    c_writer varchar2(30) not null REFERENCES tb_coma_member(nick_name),
+    no number not null REFERENCES tb_coma_board(b_no),
+    c_writer varchar2(30) not null REFERENCES tb_coma_member(nick_name) on delete cascade,
     c_content varchar2(140) not null,
     c_reg_date date default sysdate
 );
 
--- Å¬·¡½ºÇÐ»ý
+
 create table tb_class_student(
     m_no number primary key,
     class_no number references tb_class_info(class_no) on delete cascade,
@@ -96,11 +104,3 @@ create table tb_class_student(
     m_filepath varchar2(100),
     m_nickname varchar2(30)
 );
-
--- ½ÃÄö½º
-create sequence s_classstu_no;
-create sequence s_cmember_no;
-create sequence s_file_no;
-create sequence s_cboard_no;
-create sequence s_class_no;
-create sequence s_chef_file_no;
