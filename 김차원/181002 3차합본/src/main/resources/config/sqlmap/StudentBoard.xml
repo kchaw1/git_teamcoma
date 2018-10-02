@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="teamcoma.repository.mapper.StudentMapper">
+	<resultMap type="Board" id="boardMap">
+	<result column="b_no" property="bNo" />
+	<result column="b_title" property="bTitle" />
+	<result column="b_writer" property="bWriter" />
+	<result column="b_content" property="bContent" />
+	<result column="b_reg_date" property="bRegDate" />
+	<result column="b_category" property="bCategory" />
+</resultMap>
+	<!-- 전체 목록 가져오기 -->
+	<select id="selectBoard" parameterType="string" resultMap="boardMap">
+		select *
+		  from tb_coma_board
+		 where b_writer = #{bWriter}
+	</select>		
+	
+</mapper> 
+
