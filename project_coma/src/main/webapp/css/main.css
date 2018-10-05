@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+body {
+  margin:0px;
+  font-family: 'Ubuntu', arial, sans-serif;
+}
+
+.grid-wrap {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px repeat(18, 1fr) 90px;
+  grid-template-columns: 90px repeat(18, 1fr) 90px;
+  overflow: hidden;
+}
+
+.logo {
+  position: relative;
+  z-index: 3;
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9de73;
+}
+.logo p {
+  margin: 0;
+}
+
+.menu {
+  position: relative;
+  z-index: 2;
+  grid-area: 1 / 1 / 21 / 6;
+  display: flex;
+  align-items: center;
+  background: #414155;
+}
+.menu nav {
+  margin-left: 30px;
+  color: #d3d3d3;
+}
+.menu nav ul {
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.menu nav ul li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 30px 15px;
+  transition: color 0.3s;
+}
+.menu nav ul li:before {
+  content: "";
+  background: #f9de73;
+  height: 2px;
+  width: 20px;
+  margin-right: 40px;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.menu nav ul li.active, .menu nav ul li:hover {
+  color: white;
+}
+.menu nav ul li.active:before, .menu nav ul li:hover:before {
+  
+}
+
+.article {
+  background: white;
+  grid-area: 1 / 6 / 7 / 16;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 60px;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+  color: #555;
+}
+.article p {
+  margin: 0;
+}
+.article .title {
+  position: relative;
+}
+.article .title p {
+  font-size: 42px;
+  transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  opacity: 0;
+}
+.article .title p.one {
+  -webkit-transform: translateX(-70px);
+          transform: translateX(-70px);
+}
+.article .title p.two {
+  top: 0;
+  position: absolute;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.slide-1 .article .title p.one {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+.slide-2 .article .title p.two {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.section {
+  background: #e4e7ec;
+  grid-area: 1 / 16 / 7 / 21;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 60px;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 70px;
+  color: #555;
+}
+.section p {
+  margin: 0;
+}
+.section .title {
+  font-size: 16px;
+}
+.section .number {
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+.section .number p {
+  transition: opacity 0.3s ease-out 0.3s;
+  opacity: 0;
+}
+.section .number p.two {
+  position: absolute;
+  top: 0;
+}
+.slide-1 .section .number p.one {
+  opacity: 1;
+}
+.slide-2 .section .number p.two {
+  opacity: 1;
+}
+.section .number:after {
+  content: "";
+  background: white;
+  height: 5px;
+  width: 40px;
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.image-wrap {
+  grid-area: 7 / 6 / 21 / 21;
+  position: relative;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.image-wrap .image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.image-wrap .image.two {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.slide-1 .image-wrap {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.slide-2 .image-wrap {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.pagination {
+  position: relative;
+  background: #f9de73;
+  grid-area: 20 / 15 / 21 / 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 30px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+}
+.pagination .prev,
+.pagination .next {
+  cursor: pointer;
+}
+.slide-1 .pagination .prev {
+  opacity: 0.2;
+}
+.slide-2 .pagination .next {
+  opacity: 0.2;
+}
+
+.play {
+  position: relative;
+  background: white;
+  grid-area: 20 / 20 / 21 / 21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #f9de73;
+}

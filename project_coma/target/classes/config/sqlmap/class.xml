@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="teamcoma.repository.mapper.ClassMapper">
+	<resultMap id="classMap" type="ClassInfo">
+		<result column="no" property="no"></result>
+		<result column="class_no" property="classNo"></result>
+		<result column="class_classify" property="classClassify"></result>
+		<result column="class_name" property="className"></result>
+		<result column="class_teacher" property="classTeacher"></result>
+		<result column="class_start_day" property="classStartDay"></result>
+		<result column="class_end_day" property="classEndDay"></result>
+		<result column="class_start_time" property="classStartTime"></result>
+		<result column="class_end_time" property="classEndTime"></result>
+		<result column="class_cost" property="classCost"></result>
+		<result column="class_video" property="classVideo"></result>
+		<result column="class_location" property="classLocation"></result>
+		<result column="class_introduce" property="classIntroduce"></result>
+		<result column="class_latitude" property="classLatitude"></result>
+		<result column="class_longtitude" property="classLongtitude"></result>
+		<result column="class_career" property="classCareer"></result>
+	</resultMap>
+
+
+	<resultMap id="chefFileMap" type="ChefFile">
+		<result column="no" property="no"></result>
+		<result column="class_no" property="classNo"></result>
+		<result column="chef_fileno" property="chefFileNo"></result>
+		<result column="chef_filename" property="chefFileName"></result>
+		<result column="chef_filepath" property="chefFilePath"></result>
+		<result column="chef_fileclassify" property="chefFileClassify"></result>
+	</resultMap>
+
+	<resultMap id="memberMap" type="Member">
+		<result column="no" property="no" />
+		<result column="file_no" property="fileNo" />
+		<result column="file_sysname" property="fileSysName" />
+		<result column="file_syspath" property="fileSysPath" />
+		<result column="id" property="id" />
+		<result column="password" property="password" />
+		<result column="name" property="name" />
+		<result column="nick_name" property="nickName" />
+		<result column="main_addr" property="mainAddr" />
+		<result column="detail_addr" property="detailAddr" />
+		<result column="email" property="email" />
+		<result column="phone_number" property="phoneNumber" />
+		<result column="signup_classify" property="signupClassify" />
+		<result column="year" property="year" />
+		<result column="day" property="day" />
+		<result column="month" property="month" />
+		<result column="signup_date" property="signupDate" />
+	</resultMap>
+	
+	<resultMap id="studentClassMap" type="ClassStudent">
+	<result column="m_no" property="mNo" />
+	<result column="class_no" property="classNo" />
+	<result column="no" property="no" />
+	<result column="m_assesment" property="mAssesment" />
+	<result column="m_name" property="mName" />
+	<result column="m_email" property="mEmail" />
+	<result column="m_mainaddr" property="mMainAddr" />
+	<result column="m_detailaddr" property="mDetailAddr" />
+	<result column="m_phonenumber" property="mPhoneNumber" />
+	<result column="m_year" property="mYear" />
+	<result column="m_month" property="mMonth" />
+	<result column="m_day" property="mDay" />
+	<result column="m_filename" property="mFileName" />
+	<result column="m_filepath" property="mFilePath" />
+	<result column="m_nickname" property="mNickname" />
+</resultMap>
+
+	<!-- 회원번호로 회원정보찾기 -->
+	<select id="selectMemberInfoByNo" parameterType="int" resultMap="memberMap">
+		select *
+		from tb_coma_member
+		where no = #{no}
+	</select>
+
+
+	<!-- 클래스 개설 넘버를 어떻게 받을지? -->
+	<insert id="insertClassInfo" parameterType="ClassInfo">
+		<selectKey order="BEFORE" resultType="int" keyProperty="classNo">
+			select s_class_no.nextval from dual
+		</selectKey>
+		insert into tb_class_info (no, class_career, class_no, class_classify,
+		class_name, class_teacher, class_start_day,
+		class_end_day,class_start_time, class_end_time, class_cost,
+		class_video, class_location, class_introduce, class_latitude,
+		class_longtitude)
+		values(#{no}, #{classCareer}, #{classNo}, #{classClassify}, #{className},
+		#{classTeacher},#{classStartDay},#{classEndDay},#{classStartTime},#{classEndTime},#{classCost},#{classVideo},#{classLocation},#{classIntroduce},#{classLatitude},#{classLongtitude})
+	</insert>
+
+
+	<!-- 클래스 정보 가져오기 (클래스정보수정, 클래스소개, 클래스찾기페이지에 사용) -->
+	<select id="selectClassInfo" resultMap="classMap" parameterType="int">
+		select *
+		from tb_class_info
+		where class_no = #{classNo}
+	</select>
+	
+	<!-- 결과를 리스트로 받음 
+	<select id="selectClassInfo2" resultMap="classMap" parameterType="int">
+		select *
+		from tb_class_info
+		where class_no = #{classNo}
+	</select>
+	-->
+	
+	<!-- 회원번호로 클래스 정보 가져오기 -->
+	<select id="selectClassInfoByNo" resultMap="classMap" parameterType="int">
+		select *
+		from tb_class_info
+		where no = #{no}
+	</select>
+
+	<!-- 파일올리기 -->
+	<insert id="insertChefFile" parameterType="ChefFile">
+		insert into tb_chef_file(chef_fileno, no, class_no, chef_filename,
+		chef_filepath, chef_fileclassify)
+		values(s_chef_file_no.nextval, #{no}, #{classNo}, #{chefFileName}, #{chefFilePath},
+		#{chefFileClassify})
+	</insert>
+
+	<!-- 사진 가져오기 . 로그인한 회원번호에 해당하는 사진을 찾아온다. <select id="selectChefPicture" 
+		resultMap="memberMap" parameterType="int"> select file_sysname, file_syspath 
+		from tb_coma_member where no = #{no} </select> -->
+
+	<!-- 클래스 정보 수정 -->
+	<update id="updateClassInfo" parameterType="ClassInfo">
+		update tb_class_info
+		set class_classify = #{classClassify},
+		class_name = #{className},
+		class_teacher = #{classTeacher},
+		class_start_day = #{classStartDay},
+		class_end_day = #{classEndDay},
+		class_start_time = #{classStartTime},
+		class_end_time = #{classEndTime},
+		class_cost = #{classCost},
+		class_video = #{classVideo},
+		class_location = #{classLocation},
+		class_introduce = #{classIntroduce},
+		class_latitude = #{classLatitude},
+		class_longtitude = #{classLongtitude}
+		where class_no = #{classNo}
+	</update>
+
+	<!-- 클래스 파일정보 수정 -->
+	<update id="updateChefFile" parameterType="ChefFile">
+
+		update tb_chef_file
+		set chef_filename = #{chefFileName} ,
+		chef_filepath = #{chefFilePath}
+		where class_no = #{classNo} and chef_fileclassify = #{chefFileClassify}
+
+	</update>
+
+
+	<!-- 클래스 정보 사진 가져오기 -->
+	<select id="classPictureSelect" resultMap="chefFileMap"
+		parameterType="int">
+		select *
+		from tb_chef_file
+		where no = #{no} and chef_fileclassify = '2'
+	</select>
+
+
+	<!-- 본인이 개설한 클래스 리스트 가져오기 -->
+	<select id="selectMyList" resultMap="classMap" parameterType="int">
+		select *
+		from tb_class_info
+		where no = #{no}
+	</select>
+
+	<!-- 쉐프 정보 수정하기 : 정보가져오기 -->
+	<select id="chefInfoSelect" resultMap="memberMap">
+		select *
+		from tb_coma_member
+		where no = #{no}
+	</select>
+		
+	
+	<!-- 학생 리스트 가져오기 -->	
+	<select id="selectClassStudent" resultMap="studentClassMap" parameterType="int">
+		select *
+		  from tb_class_student
+		 where class_no = #{classNo} 
+	</select>
+	
+	<select id="selectDetailStudent" resultMap="studentClassMap" parameterType="int">
+		select *
+		  from tb_class_student
+		 where m_no = #{mNo} 
+	</select>
+	
+	<!-- 쉐프 정보 수정 -->
+	<update id="chefInfoUpdate" parameterType="Member">
+	update tb_coma_member
+   	   set file_sysname = #{fileSysName},
+   		   file_syspath =  #{fileSysPath},
+   		   password = #{password}, 
+   		   name = #{name}, 
+   		   main_addr = #{mainAddr} ,
+   		   detail_addr = #{detailAddr},
+   		   email= #{email},
+   		   phone_number = #{phoneNumber},
+   		   year = #{year},
+   		   day = #{day},
+   		   month = #{month}
+   	 where no = #{no}
+   	 </update>
+   	 
+   	 <!-- 평가 입력 -->
+   	 <update id="assesmentUpdate" parameterType="ClassStudent">
+   	 	update tb_class_student
+   	 	   set m_assesment = #{mAssesment}
+   	 	 where m_no = #{mNo}
+   	 </update>
+	 
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

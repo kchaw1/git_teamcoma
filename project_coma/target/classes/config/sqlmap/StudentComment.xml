@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="teamcoma.repository.mapper.StudentMapper">
+	<resultMap id="StudentCommentMap" type="Comment">
+		<result column="c_no" property="cNo"/>
+		<result column="no" property="no"/>
+		<result column="c_writer" property="cWriter"/>
+		<result column="c_content" property="cContent"/>
+		<result column="c_reg_date" property="cRegDate"/>
+	</resultMap>
+	<!-- 전체 목록 가져오기 -->
+	<select id="selectComment" parameterType="string" resultMap="StudentCommentMap">
+		select *
+		  from tb_coma_comment
+		 where c_writer = #{cWriter}
+	</select>		
+	    
+</mapper> 
+
