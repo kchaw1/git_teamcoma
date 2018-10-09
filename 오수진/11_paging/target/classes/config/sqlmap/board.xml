@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.mapper.BoardMapper">
+	<resultMap id="BoardMap" type="Board">
+		<result column="no" property="no" />
+		<result column="title" property="title" />
+		<result column="writer" property="writer" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+	</resultMap>
+	<select id="selectBoard" parameterType="Page" resultMap="BoardMap">
+		select *
+		  from (select rownum rnum, a.* 	
+			      from (select *
+				    	  from tb_paging_board 
+					     order by no desc) a
+			     where rownum &lt;= #{end})
+		 where rnum &gt;= #{begin}			     
+	</select>
+	<!-- 전체 게시물의 수(조건에 맞는) -->
+	<select id="selectBoardCount" resultType="int">
+		select count(*)
+		  from tb_paging_board 
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
